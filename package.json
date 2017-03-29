@@ -1,0 +1,10 @@
+{
+  "name": "@sethb0/eslint-config-mfllc",
+  "version": "0.1.0",
+  "description": "ESLint coding style defaults for Metal Fatigue LLC",
+  "main": "index.js",
+  "author": "Seth Blumberg <sethb@pobox.com>",
+  "license": "MIT",
+  "keywords": ["eslint", "eslintconfig"],
+  "repository": "sethb0/eslint-config-mfllc"
+}
