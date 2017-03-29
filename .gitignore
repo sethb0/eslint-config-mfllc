@@ -3,3 +3,4 @@ logs
 .tmp
 *.tmp
 asdf*
+node_modules

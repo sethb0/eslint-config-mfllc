@@ -1,0 +1,217 @@
+parserOptions:
+  ecmaVersion: 2017
+  sourceType: module
+rules:
+  no-await-in-loop: warn
+  no-compare-neg-zero: warn
+  no-cond-assign: warn
+  no-console: warn
+  no-constant-condition: warn
+  no-control-regex: warn
+  no-debugger: error
+  no-dupe-args: error
+  no-dupe-keys: error
+  no-duplicate-case: error
+  no-empty: warn
+  no-empty-character-class: error
+  no-ex-assign: warn
+  no-extra-boolean-cast: warn
+  no-extra-parens:
+  - warn
+  - all
+  - conditionalAssign: false
+    returnAssign: false
+    nestedBinaryExpressions: false
+  no-extra-semi: error
+  no-func-assign: error
+  no-inner-declarations: warn
+  no-invalid-regexp: error
+  no-irregular-whitespace: error
+  no-obj-calls: error
+  no-prototype-builtins: warn
+  no-regex-spaces: warn
+  no-sparse-arrays: warn
+  no-template-curly-in-string: warn
+  no-unexpected-multiline: error
+  no-unreachable: warn
+  no-unsafe-finally: warn
+  no-unsafe-negation: error
+  use-isnan: error
+  valid-typeof: warn
+  accessor-pairs: warn
+  array-callback-return: warn
+  block-scoped-var: error
+  class-methods-use-this: warn
+  consistent-return: warn
+  curly: warn
+  default-case: warn
+  dot-location: ["warn", "property"]
+  dot-notation: ["warn", { "allowPattern": "^[a-z]+(_[a-z]+)+$" }]
+  eqeqeq: error
+  no-alert: warn
+  no-caller: error
+  no-case-declarations: warn
+  no-div-regex: warn
+  no-else-return: warn
+  no-empty-function: warn
+  no-empty-pattern: warn
+  no-eval: error
+  no-extra-bind: warn
+  no-extra-label: warn
+  no-fallthrough: warn
+  no-floating-decimal: warn
+  no-global-assign: error
+  no-implicit-coercion: warn
+  no-implicit-globals: error
+  no-implied-eval: error
+  no-invalid-this: warn
+  no-iterator: error
+  no-labels: warn
+  no-lone-blocks: warn
+  no-loop-func: error
+  no-multi-spaces: warn
+  no-multi-str: error
+  no-new: warn
+  no-new-func: error
+  no-new-wrappers: error
+  no-octal: error
+  no-octal-escape: error
+  no-param-reassign: warn
+  no-proto: error
+  no-redeclare: error
+  no-return-assign: warn
+  no-return-await: warn
+  no-script-url: error
+  no-self-assign: warn
+  no-self-compare: warn
+  no-sequences: error
+  no-throw-literal: error
+  no-unmodified-loop-condition: warn
+  no-unused-expressions: warn
+  no-unused-labels: warn
+  no-useless-call: warn
+  no-useless-concat: warn
+  no-useless-escape: warn
+  no-useless-return: warn
+  no-void: error
+  no-with: error
+  prefer-promise-reject-errors: ["warn", { "allowEmptyReject": true }]
+  radix: ["warn", "always"]
+  require-await: warn
+  vars-on-top: warn
+  wrap-iife: error
+  yoda: ["warn", "never"]
+  strict: error
+  init-declarations: warn
+  no-catch-shadow: warn
+  no-delete-var: error
+  no-label-var: error
+  no-restricted-globals: ["error", "event", "fdescribe"]
+  no-shadow: warn
+  no-shadow-restricted-names: error
+  no-undef: warn
+  no-undef-init: warn
+  no-undefined: warn
+  no-unused-vars: warn
+  no-use-before-define: ["error", { "functions": false, "classes": false }]
+  callback-return: ["warn", ["callback", "cb", "next", "done"]]
+  global-require: warn
+  handle-callback-err: ["warn", "^err(or)?$"]
+  no-mixed-requires: ["warn", { "grouping": false, "allowCall": true }]
+  no-new-require: error
+  no-path-concat: warn
+  no-process-env: warn
+  no-process-exit: error
+  array-bracket-spacing: warn
+  block-spacing: warn
+  brace-style: warn
+  camelcase: warn
+  comma-dangle: ["warn", "always-multiline"]
+  comma-spacing: warn
+  comma-style: warn
+  computed-property-spacing: warn
+  consistent-this: ["warn", "that"]
+  eol-last: warn
+  func-call-spacing: ["warn", "never"]
+  func-names: warn
+  func-style: ["warn", "declaration", { "allowArrowFunctions": true }]
+  indent: ["warn", 2]
+  key-spacing:
+  - warn
+  - singleLine: { "beforeColon": false, "afterColon": true, "mode": "strict" }
+    multiLine: { "beforeColon": false, "afterColon": true, "mode": "minimum" }
+  keyword-spacing: warn
+  linebreak-style: error
+  lines-around-directive: ["warn", { "before": "never", "after": "always" }]
+  max-len: ["warn", { "code": 96, "tabWidth": 8 }]
+  max-lines: ["warn", 500]
+  max-nested-callbacks: warn
+  max-statements-per-line: error
+  max-statements: ["warn", 75, { "ignoreTopLevelFunctions": true }]
+  new-cap: warn
+  new-parens: warn
+  newline-per-chained-call: ["warn", { "ignoreChainWithDepth": 3 }]
+  no-array-constructor: error
+  no-bitwise: error
+  no-continue: warn
+  no-lonely-if: warn
+  no-mixed-operators:
+  - warn
+  - groups:
+    - ["+", "-", "*", "/", "%", "**", "&", "|", "^", "~", "<<", ">>", ">>>"]
+    - ["==", "!=", "===", "!==", ">", ">=", "<", "<="]
+    - ["&&", "||"]
+    - ["in", "instanceof"]
+  no-multiple-empty-lines: ["warn", { "max": 3, "maxEOF": 1 }]
+  no-negated-condition: warn
+  no-nested-ternary: error
+  no-new-object: warn
+  no-tabs: error
+  no-trailing-spaces: warn
+  no-unneeded-ternary: warn
+  no-whitespace-before-property: warn
+  object-curly-spacing: ["warn", "always"]
+  object-property-newline: ["warn", { "allowMultiplePropertiesPerLine": true }]
+  one-var: ["warn", "never"]
+  operator-assignment: warn
+  operator-linebreak: ["warn", "before"]
+  padded-blocks: ["warn", "never"]
+  quote-props: ["warn", "as-needed", { "keywords": true, "numbers": true }]
+  quotes: ["warn", "single", { "avoidEscape": true }]
+  semi: error
+  semi-spacing: warn
+  space-before-blocks: warn
+  space-before-function-paren: ["warn", "always"]
+  space-in-parens: warn
+  space-infix-ops: warn
+  space-unary-ops: warn
+  spaced-comment: warn
+  unicode-bom: error
+  arrow-body-style: ["warn", "as-needed"]
+  arrow-parens: warn
+  arrow-spacing: warn
+  constructor-super: error
+  generator-star-spacing: ["warn", "both"]
+  no-class-assign: error
+  no-const-assign: error
+  no-dupe-class-members: error
+  no-duplicate-imports: warn
+  no-new-symbol: error
+  no-this-before-super: error
+  no-useless-computed-key: warn
+  no-useless-constructor: warn
+  no-useless-rename: error
+  no-var: error
+  object-shorthand: ["warn", "always", { "avoidExplicitReturnArrows": true }]
+  prefer-arrow-callback: ["warn", { "allowNamedFunctions": true }]
+  prefer-const: warn
+  prefer-destructuring: warn
+  prefer-numeric-literals: error
+  prefer-rest-params: error
+  prefer-spread: warn
+  prefer-template: warn
+  require-yield: warn
+  rest-spread-spacing: error
+  symbol-description: warn
+  template-curly-spacing: warn
+  yield-star-spacing: ["warn", "both"]
