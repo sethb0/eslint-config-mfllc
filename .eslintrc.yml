@@ -209,7 +209,7 @@ rules:
   arrow-spacing: warn
   constructor-super: error
   generator-star-spacing: ["warn", "both"]
-  implicit-arrow-linebreak: warn
+  implicit-arrow-linebreak: ["warn", "always"]
   no-class-assign: error
   no-const-assign: error
   no-dupe-class-members: error
