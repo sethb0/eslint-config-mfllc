@@ -1,6 +1,6 @@
 {
   "name": "@sethb0/eslint-config-mfllc",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "ESLint coding style defaults for Metal Fatigue LLC",
   "main": "index.js",
   "author": "Seth Blumberg <sethb@pobox.com>",
@@ -11,13 +11,13 @@
   ],
   "repository": "sethb0/eslint-config-mfllc",
   "dependencies": {
-    "js-yaml": "^3.8.2"
+    "js-yaml": "^3.10.0"
   },
   "peerDependencies": {
-    "eslint": ">= 3.18.0"
+    "eslint": ">= 4.15.0"
   },
   "engines": {
-    "node": ">= 4",
-    "npm": ">= 3"
+    "node": ">= 8",
+    "npm": ">= 5"
   }
 }

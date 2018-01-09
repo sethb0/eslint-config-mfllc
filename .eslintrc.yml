@@ -1,7 +1,12 @@
 parserOptions:
-  ecmaVersion: 2017
+  ecmaVersion: 2018
+  ecmaFeatures:
+    jsx: false
+    experimentalObjectRestSpread: true
   sourceType: module
 rules:
+  for-direction: warn
+  getter-return: warn
   no-await-in-loop: warn
   no-compare-neg-zero: warn
   no-cond-assign: warn
@@ -70,7 +75,7 @@ rules:
   no-lone-blocks: warn
   no-loop-func: error
   no-multi-spaces: warn
-  no-multi-str: error
+  no-multi-str: warn
   no-new: warn
   no-new-func: error
   no-new-wrappers: error
@@ -93,7 +98,7 @@ rules:
   no-useless-concat: warn
   no-useless-escape: warn
   no-useless-return: warn
-  no-void: error
+  no-void: warn
   no-with: error
   prefer-promise-reject-errors: ["warn", { "allowEmptyReject": true }]
   radix: ["warn", "always"]
@@ -117,14 +122,16 @@ rules:
   callback-return: ["warn", ["callback", "cb", "next", "done"]]
   global-require: warn
   handle-callback-err: ["warn", "^err(or)?$"]
+  no-buffer-constructor: warn
   no-mixed-requires: ["warn", { "grouping": false, "allowCall": true }]
   no-new-require: error
   no-path-concat: warn
   no-process-env: warn
-  no-process-exit: error
+  no-process-exit: warn
+  array-bracket-newline: off
   array-bracket-spacing: warn
   block-spacing: warn
-  brace-style: warn
+  brace-style: ["warn", "1tbs", { "allowSingleLine": true }]
   camelcase: warn
   comma-dangle: ["warn", "always-multiline"]
   comma-spacing: warn
@@ -142,16 +149,17 @@ rules:
     multiLine: { "beforeColon": false, "afterColon": true, "mode": "minimum" }
   keyword-spacing: warn
   linebreak-style: error
-  lines-around-directive: ["warn", { "before": "never", "after": "always" }]
+  lines-between-class-members: warn
   max-len: ["warn", { "code": 96, "tabWidth": 8 }]
   max-lines: ["warn", 500]
   max-nested-callbacks: warn
   max-statements-per-line: error
   max-statements: ["warn", 75, { "ignoreTopLevelFunctions": true }]
+  multiline-comment-style: ["warn", "separate-lines"]
   new-cap: warn
   new-parens: warn
   newline-per-chained-call: ["warn", { "ignoreChainWithDepth": 3 }]
-  no-array-constructor: error
+  no-array-constructor: warn
   no-bitwise: error
   no-continue: warn
   no-lonely-if: warn
@@ -176,10 +184,19 @@ rules:
   operator-assignment: warn
   operator-linebreak: ["warn", "before"]
   padded-blocks: ["warn", "never"]
+  padding-around-statements:
+  - warn
+  - blankLine: always
+    prev: directive
+    next: "*"
+  - blankLine: never
+    prev: directive
+    next: directive
   quote-props: ["warn", "as-needed", { "keywords": true, "numbers": true }]
   quotes: ["warn", "single", { "avoidEscape": true }]
   semi: error
   semi-spacing: warn
+  semi-style: ["error", "last"]
   space-before-blocks: warn
   space-before-function-paren: ["warn", "always"]
   space-in-parens: warn
@@ -192,25 +209,25 @@ rules:
   arrow-spacing: warn
   constructor-super: error
   generator-star-spacing: ["warn", "both"]
+  implicit-arrow-linebreak: warn
   no-class-assign: error
   no-const-assign: error
   no-dupe-class-members: error
   no-duplicate-imports: warn
   no-new-symbol: error
-  no-this-before-super: error
+  no-this-before-super: warn
   no-useless-computed-key: warn
   no-useless-constructor: warn
-  no-useless-rename: error
+  no-useless-rename: warn
   no-var: error
   object-shorthand: ["warn", "always", { "avoidExplicitReturnArrows": true }]
-  prefer-arrow-callback: ["warn", { "allowNamedFunctions": true }]
   prefer-const: warn
   prefer-numeric-literals: error
-  prefer-rest-params: error
+  prefer-rest-params: warn
   prefer-spread: warn
   prefer-template: warn
   require-yield: warn
-  rest-spread-spacing: error
+  rest-spread-spacing: warn
   symbol-description: warn
   template-curly-spacing: warn
   yield-star-spacing: ["warn", "both"]
