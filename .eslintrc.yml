@@ -184,7 +184,7 @@ rules:
   operator-assignment: warn
   operator-linebreak: ["warn", "before"]
   padded-blocks: ["warn", "never"]
-  padding-around-statements:
+  padding-line-between-statements:
   - warn
   - blankLine: always
     prev: directive
