@@ -2,8 +2,8 @@ parserOptions:
   ecmaVersion: 2018
   ecmaFeatures:
     jsx: false
-    experimentalObjectRestSpread: true
   sourceType: module
+
 rules:
   for-direction: warn
   getter-return: warn
@@ -43,6 +43,7 @@ rules:
   no-unsafe-negation: error
   use-isnan: error
   valid-typeof: warn
+
   accessor-pairs: warn
   array-callback-return: warn
   block-scoped-var: error
@@ -53,6 +54,7 @@ rules:
   dot-location: ["warn", "property"]
   dot-notation: ["warn", { "allowPattern": "^[a-z]+(_[a-z]+)+$" }]
   eqeqeq: error
+  guard-for-in: warn
   no-alert: warn
   no-caller: error
   no-case-declarations: warn
@@ -98,7 +100,7 @@ rules:
   no-useless-concat: warn
   no-useless-escape: warn
   no-useless-return: warn
-  no-void: warn
+  no-void: error
   no-with: error
   prefer-promise-reject-errors: ["warn", { "allowEmptyReject": true }]
   radix: ["warn", "always"]
@@ -106,8 +108,9 @@ rules:
   vars-on-top: warn
   wrap-iife: error
   yoda: ["warn", "never"]
+
   strict: error
-  init-declarations: warn
+
   no-catch-shadow: warn
   no-delete-var: error
   no-label-var: error
@@ -119,7 +122,7 @@ rules:
   no-undefined: warn
   no-unused-vars: warn
   no-use-before-define: ["error", { "functions": false, "classes": false }]
-  callback-return: ["warn", ["callback", "cb", "next", "done"]]
+
   global-require: warn
   handle-callback-err: ["warn", "^err(or)?$"]
   no-buffer-constructor: warn
@@ -128,20 +131,24 @@ rules:
   no-path-concat: warn
   no-process-env: warn
   no-process-exit: warn
+
   array-bracket-newline: off
   array-bracket-spacing: warn
   block-spacing: warn
   brace-style: ["warn", "1tbs", { "allowSingleLine": true }]
-  camelcase: warn
+  camelcase: ["warn", { "ignoreDestructuring": true }]
   comma-dangle: ["warn", "always-multiline"]
   comma-spacing: warn
   comma-style: warn
   computed-property-spacing: warn
-  consistent-this: ["warn", "that"]
+  consistent-this: ["warn", "self"]
   eol-last: warn
   func-call-spacing: ["warn", "never"]
+  func-name-matching: ["warn", { "considerPropertyDescriptor": true }]
   func-names: warn
   func-style: ["warn", "declaration", { "allowArrowFunctions": true }]
+  function-paren-newline: ["warn", "consistent"]
+  implicit-arrow-linebreak: ["warn", "beside"]
   indent: ["warn", 2]
   key-spacing:
   - warn
@@ -151,11 +158,10 @@ rules:
   linebreak-style: error
   lines-between-class-members: warn
   max-len: ["warn", { "code": 96, "tabWidth": 8 }]
-  max-lines: ["warn", 500]
   max-nested-callbacks: warn
   max-statements-per-line: error
-  max-statements: ["warn", 75, { "ignoreTopLevelFunctions": true }]
   multiline-comment-style: ["warn", "separate-lines"]
+  multiline-ternary: ["warn", "always-multiline"]
   new-cap: warn
   new-parens: warn
   newline-per-chained-call: ["warn", { "ignoreChainWithDepth": 3 }]
@@ -178,8 +184,9 @@ rules:
   no-trailing-spaces: warn
   no-unneeded-ternary: warn
   no-whitespace-before-property: warn
+  object-curly-newline: ["warn", { "multiline": true }]
   object-curly-spacing: ["warn", "always"]
-  object-property-newline: ["warn", { "allowMultiplePropertiesPerLine": true }]
+  object-property-newline: ["warn", { "allowAllPropertiesOnSameLine": true }]
   one-var: ["warn", "never"]
   operator-assignment: warn
   operator-linebreak: ["warn", "before"]
@@ -192,6 +199,7 @@ rules:
   - blankLine: never
     prev: directive
     next: directive
+  prefer-object-spread: warn
   quote-props: ["warn", "as-needed", { "keywords": true, "numbers": true }]
   quotes: ["warn", "single", { "avoidEscape": true }]
   semi: error
@@ -203,13 +211,15 @@ rules:
   space-infix-ops: warn
   space-unary-ops: warn
   spaced-comment: warn
+  switch-colon-spacing: warn
+  template-tag-spacing: warn
   unicode-bom: error
+
   arrow-body-style: ["warn", "as-needed"]
   arrow-parens: warn
   arrow-spacing: warn
-  constructor-super: error
+  constructor-super: warn
   generator-star-spacing: ["warn", "both"]
-  implicit-arrow-linebreak: ["warn", "below"]
   no-class-assign: error
   no-const-assign: error
   no-dupe-class-members: error
