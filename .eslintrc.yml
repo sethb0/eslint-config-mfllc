@@ -111,7 +111,6 @@ rules:
 
   strict: error
 
-  no-catch-shadow: warn
   no-delete-var: error
   no-label-var: error
   no-restricted-globals: ["error", "event", "fdescribe"]
