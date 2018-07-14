@@ -83,7 +83,6 @@ rules:
   no-new-wrappers: error
   no-octal: error
   no-octal-escape: error
-  no-param-reassign: warn
   no-proto: error
   no-redeclare: error
   no-return-assign: warn
@@ -104,7 +103,6 @@ rules:
   no-with: error
   prefer-promise-reject-errors: ["warn", { "allowEmptyReject": true }]
   radix: ["warn", "always"]
-  require-await: warn
   vars-on-top: warn
   wrap-iife: error
   yoda: ["warn", "never"]
