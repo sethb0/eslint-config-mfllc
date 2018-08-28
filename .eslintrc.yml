@@ -7,6 +7,7 @@ parserOptions:
 rules:
   for-direction: warn
   getter-return: warn
+  no-async-promise-executor: warn
   no-await-in-loop: warn
   no-compare-neg-zero: warn
   no-cond-assign: warn
@@ -32,6 +33,7 @@ rules:
   no-inner-declarations: warn
   no-invalid-regexp: error
   no-irregular-whitespace: error
+  no-misleading-character-class: error
   no-obj-calls: error
   no-prototype-builtins: warn
   no-regex-spaces: warn
@@ -41,6 +43,7 @@ rules:
   no-unreachable: warn
   no-unsafe-finally: warn
   no-unsafe-negation: error
+  require-atomic-updates: warn
   use-isnan: error
   valid-typeof: warn
 
@@ -103,6 +106,7 @@ rules:
   no-with: error
   prefer-promise-reject-errors: ["warn", { "allowEmptyReject": true }]
   radix: ["warn", "always"]
+  require-unicode-regexp: warn
   vars-on-top: warn
   wrap-iife: error
   yoda: ["warn", "never"]
