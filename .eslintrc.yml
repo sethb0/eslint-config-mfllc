@@ -242,3 +242,14 @@ rules:
   symbol-description: warn
   template-curly-spacing: warn
   yield-star-spacing: ["warn", "both"]
+
+overrides:
+- files: "**/*.spec.js"
+  env:
+    mocha: true
+  rules:
+    func-names: off
+    max-lines: off
+    no-invalid-this: off
+    no-unused-expressions: off
+    prefer-arrow-callback: off
