@@ -185,7 +185,15 @@ rules:
   no-trailing-spaces: warn
   no-unneeded-ternary: warn
   no-whitespace-before-property: warn
-  object-curly-newline: ["warn", { "multiline": true }]
+  object-curly-newline:
+  - warn
+  - ObjectExpression:
+      consistent: true
+      multiline: true
+      minProperties: 4
+    ObjectPattern: never
+    ImportDeclaration: never
+    ExportDeclaration: never
   object-curly-spacing: ["warn", "always"]
   object-property-newline: ["warn", { "allowAllPropertiesOnSameLine": true }]
   one-var: ["warn", "never"]
