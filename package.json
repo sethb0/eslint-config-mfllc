@@ -11,7 +11,7 @@
   ],
   "repository": "sethb0/eslint-config-mfllc",
   "dependencies": {
-    "js-yaml": "^3.13.0"
+    "js-yaml": "^3.13.1"
   },
   "peerDependencies": {
     "eslint": "^5.16.0"
