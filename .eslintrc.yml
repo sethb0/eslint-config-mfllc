@@ -1,5 +1,5 @@
 parserOptions:
-  ecmaVersion: 2018
+  ecmaVersion: 2019
   ecmaFeatures:
     jsx: false
   sourceType: module
@@ -153,11 +153,8 @@ rules:
   capitalized-comments:
   - warn
   - always
-  - line:
-    - ignoreConsecutiveComments: true
-    block:
-    - ignoreConsecutiveComments: true
-      ignoreInlineComments: true
+  - line: { "ignoreConsecutiveComments": true }
+    block: { "ignoreConsecutiveComments": true, "ignoreInlineComments": true }
   comma-dangle: ["warn", "always-multiline"]
   comma-spacing: warn
   comma-style: warn
