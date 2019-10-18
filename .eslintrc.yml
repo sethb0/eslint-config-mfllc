@@ -150,11 +150,6 @@ rules:
   block-spacing: warn
   brace-style: ["warn", "1tbs", { "allowSingleLine": true }]
   camelcase: warn
-  capitalized-comments:
-  - warn
-  - always
-  - line: { "ignoreConsecutiveComments": true }
-    block: { "ignoreConsecutiveComments": true, "ignoreInlineComments": true }
   comma-dangle: ["warn", "always-multiline"]
   comma-spacing: warn
   comma-style: warn
