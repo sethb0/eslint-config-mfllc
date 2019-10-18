@@ -14,10 +14,10 @@
     "js-yaml": "^3.13.1"
   },
   "peerDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^6.5.1"
   },
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^6.5.1"
   },
   "engines": {
     "node": ">= 8",

@@ -8,7 +8,6 @@ rules:
   for-direction: warn
   getter-return: warn
   no-async-promise-executor: warn
-  no-await-in-loop: warn
   no-compare-neg-zero: warn
   no-cond-assign: warn
   no-console: warn
@@ -30,6 +29,7 @@ rules:
     nestedBinaryExpressions: false
   no-extra-semi: error
   no-func-assign: error
+  no-import-assign: error
   no-inner-declarations: warn
   no-invalid-regexp: error
   no-irregular-whitespace: error
@@ -54,18 +54,21 @@ rules:
   consistent-return: warn
   curly: warn
   default-case: warn
+  default-param-last: warn
   dot-location: ["warn", "property"]
-  dot-notation: ["warn", { "allowPattern": "^[a-z]+(_[a-z]+)+$" }]
+  dot-notation: "warn"
   eqeqeq: error
   guard-for-in: warn
   no-alert: warn
   no-caller: error
   no-case-declarations: warn
   no-div-regex: warn
+  no-eq-null: warn
   no-else-return: warn
   no-empty-function: warn
   no-empty-pattern: warn
   no-eval: error
+  no-extend-native: error
   no-extra-bind: warn
   no-extra-label: warn
   no-fallthrough: warn
@@ -88,6 +91,14 @@ rules:
   no-octal-escape: error
   no-proto: error
   no-redeclare: error
+  no-restricted-properties:
+  - warn
+  - object: describe
+    property: only
+    message: remember not to commit tests using describe.only
+  - object: it
+    property: only
+    message: remember not to commit tests using it.only
   no-return-assign: warn
   no-return-await: warn
   no-script-url: error
@@ -99,12 +110,14 @@ rules:
   no-unused-expressions: warn
   no-unused-labels: warn
   no-useless-call: warn
+  no-useless-catch: warn
   no-useless-concat: warn
   no-useless-escape: warn
   no-useless-return: warn
   no-void: error
   no-with: error
   prefer-promise-reject-errors: ["warn", { "allowEmptyReject": true }]
+  prefer-regex-literals: warn
   radix: ["warn", "always"]
   require-unicode-regexp: warn
   vars-on-top: warn
@@ -115,7 +128,7 @@ rules:
 
   no-delete-var: error
   no-label-var: error
-  no-restricted-globals: ["error", "event", "fdescribe"]
+  no-restricted-globals: ["error", "event"]
   no-shadow: warn
   no-shadow-restricted-names: error
   no-undef: warn
@@ -133,21 +146,29 @@ rules:
   no-process-env: warn
   no-process-exit: warn
 
-  array-bracket-newline: off
   array-bracket-spacing: warn
   block-spacing: warn
   brace-style: ["warn", "1tbs", { "allowSingleLine": true }]
-  camelcase: ["warn", { "ignoreDestructuring": true }]
+  camelcase: warn
+  capitalized-comments:
+  - warn
+  - always
+  - line:
+    - ignoreConsecutiveComments: true
+    block:
+    - ignoreConsecutiveComments: true
+      ignoreInlineComments: true
   comma-dangle: ["warn", "always-multiline"]
   comma-spacing: warn
   comma-style: warn
   computed-property-spacing: warn
-  consistent-this: ["warn", "self"]
+  consistent-this: warn
   eol-last: warn
   func-call-spacing: ["warn", "never"]
   func-name-matching: ["warn", { "considerPropertyDescriptor": true }]
   func-names: warn
   func-style: ["warn", "declaration", { "allowArrowFunctions": true }]
+  function-call-argument-newline: ["warn", "consistent"]
   function-paren-newline: ["warn", "consistent"]
   implicit-arrow-linebreak: ["warn", "beside"]
   indent: ["warn", 2]
@@ -180,7 +201,7 @@ rules:
   no-multiple-empty-lines: ["warn", { "max": 3, "maxEOF": 1 }]
   no-negated-condition: warn
   no-nested-ternary: error
-  no-new-object: warn
+  no-new-object: error
   no-tabs: error
   no-trailing-spaces: warn
   no-unneeded-ternary: warn
@@ -190,10 +211,9 @@ rules:
   - ObjectExpression:
       consistent: true
       multiline: true
-      minProperties: 4
     ObjectPattern: never
-    ImportDeclaration: never
-    ExportDeclaration: never
+    ImportDeclaration: { "consistent": true }
+    ExportDeclaration: { "consistent": true }
   object-curly-spacing: ["warn", "always"]
   object-property-newline: ["warn", { "allowAllPropertiesOnSameLine": true }]
   one-var: ["warn", "never"]
