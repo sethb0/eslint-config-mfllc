@@ -1,8 +1,20 @@
+# parser: babel-eslint
 parserOptions:
-  ecmaVersion: 2019
   ecmaFeatures:
     jsx: false
   sourceType: module
+plugins:
+- babel
+- node
+- mocha
+- promise
+- unicorn
+env:
+  es2020: true
+reportUnusedDisableDirectives: true
+settings:
+  node:
+    tryExtensions: ['.js', '.cjs', '.mjs']
 
 rules:
   for-direction: warn
@@ -45,7 +57,7 @@ rules:
   no-unsafe-negation: error
   require-atomic-updates: warn
   use-isnan: error
-  valid-typeof: warn
+  # valid-typeof: warn
 
   accessor-pairs: warn
   array-callback-return: warn
@@ -77,7 +89,7 @@ rules:
   no-implicit-coercion: warn
   no-implicit-globals: error
   no-implied-eval: error
-  no-invalid-this: warn
+  # no-invalid-this: warn
   no-iterator: error
   no-labels: warn
   no-lone-blocks: warn
@@ -107,7 +119,7 @@ rules:
   no-sequences: error
   no-throw-literal: error
   no-unmodified-loop-condition: warn
-  no-unused-expressions: warn
+  # no-unused-expressions: warn
   no-unused-labels: warn
   no-useless-call: warn
   no-useless-catch: warn
@@ -176,7 +188,7 @@ rules:
   max-statements-per-line: error
   multiline-comment-style: ["warn", "separate-lines"]
   multiline-ternary: ["warn", "always-multiline"]
-  new-cap: warn
+  # new-cap: warn
   new-parens: warn
   newline-per-chained-call: ["warn", { "ignoreChainWithDepth": 3 }]
   no-array-constructor: warn
@@ -206,7 +218,7 @@ rules:
     ObjectPattern: never
     ImportDeclaration: { "consistent": true }
     ExportDeclaration: { "consistent": true }
-  object-curly-spacing: ["warn", "always"]
+  # object-curly-spacing: ["warn", "always"]
   object-property-newline: ["warn", { "allowAllPropertiesOnSameLine": true }]
   one-var: ["warn", "never"]
   operator-assignment: warn
@@ -222,8 +234,8 @@ rules:
     next: directive
   prefer-object-spread: warn
   quote-props: ["warn", "as-needed", { "keywords": true, "numbers": true }]
-  quotes: ["warn", "single", { "avoidEscape": true }]
-  semi: error
+  # quotes: ["warn", "single", { "avoidEscape": true }]
+  # semi: error
   semi-spacing: warn
   semi-style: ["error", "last"]
   space-before-blocks: warn
@@ -263,6 +275,90 @@ rules:
   template-curly-spacing: warn
   yield-star-spacing: ["warn", "both"]
 
+  node/no-extraneous-import: warn
+  node/no-extraneous-require: warn
+  node/no-missing-import: warn
+  node/no-missing-require: warn
+  node/no-unpublished-bin: warn
+  node/no-unpublished-import: warn
+  node/no-unpublished-require: warn
+  node/no-unsupported-features/node-builtins: warn
+  node/shebang: warn
+  node/process-exit-as-throw: error
+  node/no-deprecated-api: warn
+  node/exports-style: error
+  node/file-extension-in-import:
+  - error
+  - always
+  - .js: never
+  node/prefer-global/buffer: error
+  node/prefer-global/console: error
+  node/prefer-global/process: error
+  node/prefer-global/text-decoder: error
+  node/prefer-global/text-encoder: error
+  node/prefer-global/url: error
+  node/prefer-global/url-search-params: error
+  node/prefer-promises/dns: warn
+  node/prefer-promises/fs: warn
+
+  promise/always-return: warn
+  promise/catch-or-return: warn
+  promise/no-nesting: warn
+
+  unicorn/catch-error-name:
+  - warn
+  - name: err
+  unicorn/consistent-function-scoping: warn
+  unicorn/custom-error-definition: warn
+  unicorn/error-message: warn
+  unicorn/escape-case: warn
+  unicorn/filename-case: warn
+  unicorn/import-index: warn
+  unicorn/new-for-builtins: warn
+  unicorn/no-abusive-eslint-disable: error
+  unicorn/no-array-instanceof: warn
+  unicorn/no-for-loop: warn
+  unicorn/no-hex-escape: error
+  unicorn/no-unsafe-regex: warn
+  unicorn/no-zero-fractions: warn
+  unicorn/number-literal-case: warn
+  unicorn/prefer-add-event-listener: warn
+  unicorn/prefer-dataset: warn
+  unicorn/prefer-event-key: warn
+  unicorn/prefer-exponentiation-operator: warn
+  unicorn/prefer-flat-map: warn
+  unicorn/prefer-includes: warn
+  unicorn/prefer-node-append: warn
+  unicorn/prefer-node-remove: warn
+  unicorn/prefer-query-selector: warn
+  unicorn/prefer-reflect-apply: warn
+  unicorn/prefer-starts-ends-with: warn
+  unicorn/prefer-string-slice: warn
+  unicorn/prefer-text-content: warn
+  unicorn/prefer-type-error: warn
+  unicorn/regex-shorthand: warn
+  unicorn/throw-new-error: error
+
+  new-cap: off
+  babel/new-cap: warn
+  no-invalid-this: off
+  babel/no-invalid-this: warn
+  object-curly-spacing: off
+  babel/object-curly-spacing:
+  - warn
+  - always
+  quotes: off
+  babel/quotes:
+  - warn
+  - single
+  - avoidEscape: true
+  semi: off
+  babel/semi: error
+  no-unused-expressions: off
+  babel/no-unused-expressions: warn
+  valid-typeof: off
+  babel/valid-typeof: warn
+
 overrides:
 - files: "**/*.spec.js"
   env:
@@ -270,6 +366,18 @@ overrides:
   rules:
     func-names: off
     max-lines: off
-    no-invalid-this: off
-    no-unused-expressions: off
+    babel/no-invalid-this: off
+    babel/no-unused-expressions: off
     prefer-arrow-callback: off
+    mocha/handle-done-callback: warn
+    mocha/no-async-describe: error
+    mocha/no-exclusive-tests: warn
+    mocha/no-global-tests: error
+    mocha/no-identical-title: warn
+    mocha/no-mocha-arrows: error
+    mocha/no-nested-tests: error
+    mocha/no-return-and-callback: error
+    mocha/no-return-from-async: error
+    mocha/no-setup-in-describe: warn
+    mocha/no-skipped-tests: warn
+    mocha/no-top-level-hooks: error
