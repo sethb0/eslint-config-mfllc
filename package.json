@@ -1,6 +1,6 @@
 {
   "name": "@sethb0/eslint-config-mfllc",
-  "version": "0.8.2",
+  "version": "1.0.0",
   "description": "ESLint coding style defaults for Metal Fatigue LLC",
   "author": "Seth Blumberg <sethb@pobox.com>",
   "license": "MIT",
