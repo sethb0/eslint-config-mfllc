@@ -316,10 +316,9 @@ rules:
   unicorn/import-index: warn
   unicorn/new-for-builtins: warn
   unicorn/no-abusive-eslint-disable: error
-  unicorn/no-array-instanceof: warn
+  unicorn/no-array-instanceof: error
   unicorn/no-for-loop: warn
   unicorn/no-hex-escape: error
-  unicorn/no-unsafe-regex: warn
   unicorn/no-zero-fractions: warn
   unicorn/number-literal-case: warn
   unicorn/prefer-add-event-listener: warn
